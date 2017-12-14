@@ -18,8 +18,8 @@ public class Drivetrain extends Subsystem {
 	
 	private final TalonSRX leftForwMotor = RobotMap.leftForwMotor;
 	private final TalonSRX rightForwMotor = RobotMap.rightForwMotor;
-	private final CANTalon leftBackMotor = RobotMap.rightBackMotor;
-	private final CANTalon rightBackMotor = RobotMap.rightBackMotor;
+	private final TalonSRX leftBackMotor = RobotMap.rightBackMotor;
+	private final TalonSRX rightBackMotor = RobotMap.rightBackMotor;
 	
 	private final RobotDrive robotDrive = RobotMap.robotDrive;
 	

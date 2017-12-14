@@ -7,7 +7,6 @@ import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.TalonSRX;
 
 /**
- * @author David Fang
  * The RobotMap is a mapping from the ports sensors and actuators are wired into
  * to a variable name. This provides flexibility changing wiring, makes checking
  * the wiring easier and significantly reduces the number of magic numbers
@@ -27,18 +26,18 @@ public class RobotMap {
 	//TODO : Make general which motors are Pwm and which ones are Can
 	public static TalonSRX leftForwMotor;
 	public static TalonSRX rightForwMotor;
-	public static CANTalon leftBackMotor;
-	public static CANTalon rightBackMotor;
+	public static TalonSRX leftBackMotor;
+	public static TalonSRX rightBackMotor;
 	
 	public static RobotDrive robotDrive;
 	
 	public static DoubleSolenoid dtGear;
 	
 	public RobotMap() {
-		leftForwMotor = new TalonSRX((int)Robot.getPref("leftForwMotorPort", 0));
-		rightForwMotor = new TalonSRX((int)Robot.getPref("rightForwMotorPort", 1));
-		leftBackMotor = new CANTalon((int)Robot.getPref("leftBackMotorID", 1));
-		rightBackMotor = new CANTalon((int)Robot.getPref("rightBackMotorID", 2));
+		leftForwMotor = new TalonSRX((int)Robot.getPref("Ports: leftForwMotor", 0));
+		rightForwMotor = new TalonSRX((int)Robot.getPref("Ports: rightForwMotor", 1));
+		leftBackMotor = new TalonSRX((int)Robot.getPref("Ports: leftBackMotor", 2));
+		rightBackMotor = new TalonSRX((int)Robot.getPref("Ports: rightBackMotor", 3));
 		
 		robotDrive = new RobotDrive(leftForwMotor, leftBackMotor, rightForwMotor, rightBackMotor);
 		robotDrive.setMaxOutput(Robot.getPref("driveSpeedMult", 1));
