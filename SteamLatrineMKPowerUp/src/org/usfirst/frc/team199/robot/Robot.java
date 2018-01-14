@@ -41,9 +41,11 @@ public class Robot extends TimedRobot {
 			boolKeys.add("Arcade Drive");
 			boolKeys.add("Arcade Drive Default Setup");
 			boolKeys.add("Square Drive Values");
+			boolKeys.add("High Gear");
 			
 			boolDef.add(true);
 			boolDef.add(true);
+			boolDef.add(false);
 			boolDef.add(false);
 		for(int i = 0; i < boolKeys.size(); i++) {
 			if(!SmartDashboard.containsKey(boolKeys.get(i))) {

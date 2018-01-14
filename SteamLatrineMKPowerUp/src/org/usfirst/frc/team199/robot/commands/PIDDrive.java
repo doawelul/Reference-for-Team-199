@@ -1,8 +1,6 @@
 package org.usfirst.frc.team199.robot.commands;
 
 import org.usfirst.frc.team199.robot.Robot;
-import org.usfirst.frc.team199.robot.RobotMap;
-import org.usfirst.frc.team199.robot.motion.PID;
 
 import edu.wpi.first.wpilibj.command.Command;
 
@@ -21,19 +19,18 @@ public class PIDDrive extends Command {
 
     // Called just before this Command runs the first time
     protected void initialize() {
-    	Robot.dt.enableMoveLeftPid();
-    	Robot.dt.enableMoveRightPid();
-    	Robot.dt.setSetMoveLeft(target);
-    	Robot.dt.setSetMoveRight(target);
+    	Robot.dt.enableMovePid();
+    	Robot.dt.setSetMove(target);
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	Robot.dt.arcadeDrive(Robot.dt.getPidOut(), 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return Robot.dt.onTargetLeft() && Robot.dt.onTargetRight();
+        return Robot.dt.onDriveTarg();
     }
 
     // Called once after isFinished returns true
